@@ -11,6 +11,7 @@ import time
 import urllib
 import urllib2
 import json
+from wrappers import Ticker, Balance
 
 
 class Api:
@@ -58,7 +59,7 @@ class Api:
         return json.loads(answer)  # generate dict and return
 
     def ticker(self, couple='GHS/BTC'):
-        return self.api_call('ticker', {}, 0, couple)
+        return Ticker(self.api_call('ticker', {}, 0, couple), couple)
 
     def order_book(self, couple='GHS/BTC'):
         return self.api_call('order_book', {}, 0, couple)
@@ -67,7 +68,7 @@ class Api:
         return self.api_call('trade_history', {"since": str(since)}, 0, couple)
 
     def balance(self):
-        return self.api_call('balance', {}, 1)
+        return Balance(self.api_call('balance', {}, 1))
 
     def current_orders(self, couple='GHS/BTC'):
         return self.api_call('open_orders', {}, 1, couple)
