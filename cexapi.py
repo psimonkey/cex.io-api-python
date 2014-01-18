@@ -29,7 +29,7 @@ class Api:
 
     ##get timestamp as nonce
     def __nonce(self):
-        self.__nonce_v = '{:.10f}'.format(time.time() * 1000).split('.')[0]
+        self.__nonce_v = '{0:.10f}'.format(time.time() * 1000).split('.')[0]
 
     ##generate signature
     def __signature(self):
