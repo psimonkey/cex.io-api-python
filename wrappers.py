@@ -49,6 +49,10 @@ class Balance(CexWrapper):
     def nmc_available(self):
         return float(self.raw['NMC']['available'])
 
+    @property
+    def ghs_available(self):
+        return float(self.raw['GHS']['available'])
+
 class Coin(CexWrapper):
     def __str__(self):
         if 'orders' in self.raw:
