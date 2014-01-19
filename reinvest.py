@@ -24,8 +24,8 @@ buy_btc = (b.btc_available / btc_price) / 1.05
 print 'Can therefore buy %s GHS with BTC' % buy_btc
 if buy_btc > 0.001:
     print 'Placing order for %s GHS at %s BTC/GHS' % (buy_btc, btc_price)
-    #order_id = a.place_order('buy', amount=buy_btc, price=btc_price, couple='GHS/BTC')['id']
-    #print 'Order id %s successfully placed' % order_id
+    order_id = a.place_order('buy', amount=buy_btc, price=btc_price, couple='GHS/BTC')['id']
+    print 'Order id %s successfully placed' % order_id
 else:
     print 'Cannot buy enough - skipping GHS/BTC'
 
@@ -38,8 +38,8 @@ buy_nmc = (b.nmc_available / nmc_price) / 1.05
 print 'Can therefore buy %s GHS with NMC' % buy_nmc
 if buy_nmc > 0.001:
     print 'Placing order for %s GHS at %s NMC/BTC' % (buy_nmc, nmc_price)
-    #order_id = a.place_order('buy', amount=buy_nmc, price=nmc_price, couple='GHS/NMC')['id']
-    #print 'Order id %s successfully placed' % order_id
+    order_id = a.place_order('buy', amount=buy_nmc, price=nmc_price, couple='GHS/NMC')['id']
+    print 'Order id %s successfully placed' % order_id
 else:
     print 'Cannot buy enough - skipping GHS/NMC'
 
